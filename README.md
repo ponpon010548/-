@@ -5,3 +5,4 @@
 NCCU 應用數學系 蔡炎龍老師課程
 #### 3.deep learning
 NCCU 應用數學系 蔡炎龍老師課程--課後研讀筆記
+#### 4.leet code (easy)
