@@ -1,0 +1,38 @@
+# pythonic solution
+
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0 :
+            return False
+        else:
+            y = str(x)
+            y = int(y[::-1])
+            if x != y:
+                return False
+        return True
+
+# not pythonic solution, maybe better for C
+
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        stack = []
+        count = 0
+        if x < 0 :
+            return False
+        else:
+            y = str(x)
+            stringlength = len(y)
+            if stringlength % 2 == 0:
+                for i in range(stringlength//2):
+                    stack.append(y[i])
+                count = stringlength//2 
+            else:
+                for i in range(stringlength//2):
+                    stack.append(y[i])
+                count = stringlength//2 + 1
+            while(stack != []):
+                a = stack.pop()
+                if a != y[count]:
+                    return False
+                count+=1
+        return True
