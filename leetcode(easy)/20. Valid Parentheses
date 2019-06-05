@@ -1,0 +1,19 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        if len(s) % 2 != 0:
+            return False
+        dic = {'(' : ')', '[' : ']', '{' : '}'}
+        stack = []
+        g = dic.keys()
+        for j in s:
+            if j in g:
+                stack.append(j)
+            else:
+                if stack == []:
+                    return False
+                a = stack.pop()
+                if j != dic[a]:
+                    return False
+        if stack != []:
+                return False
+        return True
